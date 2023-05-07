@@ -210,7 +210,7 @@ public:
 		read_input(pathToFile);
 		for(auto& layer : this->layers){
         	array = layer.Linear(array);
-        }
+        	}
 		if(print) print_result(array);
 	};
 
