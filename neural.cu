@@ -209,7 +209,7 @@ public:
 	void my_forward(std::string pathToFile, bool print){
 		read_input(pathToFile);
 		for(auto& layer : this->layers){
-        	array = layer.Linear(array);
+        		array = layer.Linear(array);
         	}
 		if(print) print_result(array);
 	};
