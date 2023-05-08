@@ -41,9 +41,10 @@
 
 
 // функция активации. __global__ функции не могут быть членом класса, так что вынесла
-__global__ void nn_Sigmoid(float *arr)
+__global__ void nn_Sigmoid(float *arr, int size)
 {
 	int id = threadIdx.x;
+	if(id < size - 1 && id > 0) 
 	arr[id] = 1 / (1 + exp(-arr[id]));
 }
 
@@ -130,7 +131,7 @@ public:
 	// сигмоида
 	void Sigmoid(float *arr)
 	{
-		nn_Sigmoid<<<1, output_size>>> (arr);
+		nn_Sigmoid<<<1, output_size>>> (arr, output_size);
 	};
 
 	// линейный слой
