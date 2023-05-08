@@ -14,7 +14,7 @@
 #include <cuda_runtime.h>
 
 #define WITH_ACTIVATION true
-#define WITHOUT_ACTIVATION true
+#define WITHOUT_ACTIVATION false
 #define PRINT_RESULT true
 #define DONT_PRINT false
 #define IDX2C(i,j,ld) (((j)*(ld))+(i))
