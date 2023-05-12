@@ -93,10 +93,7 @@ private:
 		float *host_array = new float [output_size];
 		try{
 			std::ifstream fin(pathToWeights);
-			for (int i = 0; i < output_size; i++) {
-				fin >> host_array[i];
-				//std::cout << arr[i] << " ";
-			}
+			for (int i = 0; i < output_size; i++) fin >> host_array[i];
 			fin.close();
 		}
 		catch(std::exception const& e){
