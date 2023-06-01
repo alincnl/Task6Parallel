@@ -44,7 +44,7 @@
 __global__ void nn_Sigmoid(float *arr, int size)
 {
 	int id = threadIdx.x;
-	if(id < size - 1 && id > 0) 
+	if(id < size && id >= 0) 
 		arr[id] = 1 / (1 + exp(-arr[id]));
 }
 
